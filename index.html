@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPUSM Student Enrollment</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+    <div class="header-content">
+        <div class="logo-area">
+            <img src="spusm-logo.png" alt="SPUSM Logo" class="school-logo">
+        </div>
+        <div class="school-title">
+            <h1>ST. PAUL UNIVERSITY SAN MIGUEL</h1>
+            <p>Education for a Greater Tomorrow</p>
+        </div>
+    </div>
+
+    <div class="yellow-line"></div>
+
+    <div class="enrollment-title">
+        <span class="graduation-icon">🎓</span>
+        <h2>Student Enrollment Form</h2>
+    </div>
+
+    <p class="header-description">
+        Complete your information below. If you need help, ask our AI enrollment assistant.
+    </p>
+</header>
+
+<main class="main-container">
+
+    <section class="form-container">
+
+        <div class="section">
+            <div class="section-title">
+                <span>👤</span>
+                <h2>Personal Information</h2>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="firstName">First Name *</label>
+                    <input type="text" id="firstName" placeholder="Enter your first name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name *</label>
+                    <input type="text" id="lastName" placeholder="Enter your last name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" id="middleName" placeholder="Enter your middle name">
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Birth Date *</label>
+                    <input type="date" id="birthDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" id="phone" placeholder="09XXXXXXXXX" maxlength="11" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <span>🎓</span>
+                <h2>Enrollment Information</h2>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="program">Program *</label>
+                    <select id="program" required>
+                        <option value="">Select program</option>
+                        <option value="BSCS">Bachelor of Science in Computer Science</option>
+                        <option value="BSIT">Bachelor of Science in Information Technology</option>
+                        <option value="BSED">Bachelor of Secondary Education</option>
+                        <option value="BEED">Bachelor of Elementary Education</option>
+                        <option value="BSBA">Bachelor of Science in Business Administration</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="yearLevel">Year Level *</label>
+                    <select id="yearLevel" required>
+                        <option value="">Select year level</option>
+                        <option value="1st Year">1st Year</option>
+                        <option value="2nd Year">2nd Year</option>
+                        <option value="3rd Year">3rd Year</option>
+                        <option value="4th Year">4th Year</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="semester">Semester *</label>
+                    <select id="semester" required>
+                        <option value="">Select semester</option>
+                        <option value="1st Semester">1st Semester</option>
+                        <option value="2nd Semester">2nd Semester</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="schoolYear">School Year *</label>
+                    <select id="schoolYear" required>
+                        <option value="">Select school year</option>
+                        <option value="2026-2027">2026-2027</option>
+                        <option value="2027-2028">2027-2028</option>
+                        <option value="2028-2029">2028-2029</option>
+                        <option value="2029-2030">2029-2030</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-title">
+                <span>📍</span>
+                <h2>Address</h2>
+            </div>
+
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="houseNumber">House / Street</label>
+                    <input type="text" id="houseNumber" placeholder="House number / Street">
+                </div>
+
+                <div class="form-group">
+                    <label for="barangay">Barangay</label>
+                    <input type="text" id="barangay" placeholder="Enter barangay">
+                </div>
+
+                <div class="form-group">
+                    <label for="municipality">Municipality / City</label>
+                    <input type="text" id="municipality" placeholder="Enter municipality or city">
+                </div>
+
+                <div class="form-group">
+                    <label for="province">Province</label>
+                    <input type="text" id="province" placeholder="Enter province">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-buttons">
+            <button type="button" class="clear-button" onclick="clearForm()">Clear Form</button>
+            <button type="button" class="submit-button" onclick="submitEnrollment()">Submit Enrollment</button>
+        </div>
+    </section>
+
+    <aside class="chat-container">
+        <div class="chat-header">
+            <div class="chat-profile">
+                <img src="spusm-logo.png" alt="SPUSM" class="chat-logo">
+                <div>
+                    <h2>SPUSM AI Assistant</h2>
+                    <div class="online-status"><span></span> Online</div>
+                </div>
+            </div>
+            <button class="minimize-button" onclick="toggleChat()">−</button>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            <div class="bot-message">
+                <img src="spusm-logo.png" class="message-logo" alt="AI">
+                <div class="message-content">
+                    <p>Hello! 👋</p>
+                    <p>
+                        I'm your SPUSM AI Assistant. I can help you with the
+                        enrollment form, answer your questions, and guide you
+                        through the enrollment process.
+                    </p>
+                    <p>What would you like to know?</p>
+                    <small>AI Assistant</small>
+                </div>
+            </div>
+
+            <div class="quick-questions">
+                <button onclick="quickQuestion('programs')">📚 What programs are available?</button>
+                <button onclick="quickQuestion('requirements')">📋 What are the requirements?</button>
+                <button onclick="quickQuestion('enroll')">❓ How do I enroll?</button>
+                <button onclick="quickQuestion('form')">💬 Can you help me fill out the form?</button>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <button class="attachment-button" onclick="attachmentMessage()">📎</button>
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleEnter(event)">
+            <button class="send-button" onclick="sendMessage()">➤</button>
+        </div>
+    </aside>
+</main>
+
+<div class="modal" id="successModal">
+    <div class="modal-content">
+        <div class="success-icon">✓</div>
+        <h2>Enrollment Submitted!</h2>
+        <p>Your enrollment information has been successfully submitted.</p>
+        <p>Please wait for further instructions from the university.</p>
+        <button onclick="closeModal()">OK</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
